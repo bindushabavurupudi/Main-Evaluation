@@ -22,7 +22,7 @@
 
 }
 .card{
-    /* background-color: aqua; */
+    background-color: aqua;
     display: flex;
     height: 400px;
     flex-direction: column;

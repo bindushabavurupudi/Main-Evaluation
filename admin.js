@@ -44,4 +44,7 @@ function add(){
         }
         add();
     }
+    function updateAvail(i){
+        
+    }
 }
