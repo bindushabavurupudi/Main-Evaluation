@@ -28,12 +28,13 @@ function add(){
         <p>Reg No.of Vehicle: ${arr[i].vehicle}</p>
         <p>Category: ${arr[i].cat}</p>
         <p>Driver Name: ${arr[i].name}
+        <p>Is Available: ${arr[i].avail}
         </br>
         <button onclick="updateDriver()">Update Driver</button>
         </br>
-        <button onclick="updateAvail()">update Availability</button>
+        <button onclick="updateAvail(${arr[i].avail}, ${arr[i].name})">update Availability</button>
         </br>
-        <button onclick="updateVehicle()">Update Vehicle</button>
+        <button onclick="updateVehicle(${arr[i].name})">Delete Vehicle</button>
         `;
         box.appendChild(card);
     }
@@ -44,7 +45,14 @@ function add(){
         }
         add();
     }
-    function updateAvail(i){
-        
+    function updateAvail(avail, name){
+        let avai = "Available";
+        if(avail === "Available") avai = "UnAvailable";
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i].name === name){
+                arr[i].avail = avai;
+                break;
+            }
+        }
     }
 }
