@@ -7,7 +7,7 @@ function addFleet() {
     if (vehicle === "" || driver === "" || available === "isAvailable?" || select === "select")
         alert("Enter all details");
     else {
-        alert("added successfully")
+        // alert("added successfully")
         let obj = {
             vehicle: vehicle,
             cat: select,
@@ -29,12 +29,19 @@ function add(){
         <p>Category: ${arr[i].cat}</p>
         <p>Driver Name: ${arr[i].name}
         </br>
-        <button onclick="updateDriver(${i})">Update Driver</button>
+        <button onclick="updateDriver()">Update Driver</button>
         </br>
-        <button onclick="updateAvail(${i})">update Availability</button>
+        <button onclick="updateAvail()">update Availability</button>
         </br>
-        <button onclick="updateVehicle(${i})">Update Vehicle</button>
+        <button onclick="updateVehicle()">Update Vehicle</button>
         `;
         box.appendChild(card);
+    }
+    function updateDriver(){
+        let newName = prompt("Enetr new Driver Name");
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i].name === name) arr[i].name = newName
+        }
+        add();
     }
 }
