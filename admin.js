@@ -34,7 +34,7 @@ function add(){
         </br>
         <button onclick="updateAvail(${arr[i].avail}, ${arr[i].name})">update Availability</button>
         </br>
-        <button onclick="updateVehicle(${arr[i].name})">Delete Vehicle</button>
+        <button onclick="deleteVehicle(${arr[i].name})">Delete Vehicle</button>
         `;
         box.appendChild(card);
     }
@@ -52,6 +52,13 @@ function add(){
             if(arr[i].name === name){
                 arr[i].avail = avai;
                 break;
+            }
+        }
+    }
+    function deleteVehicle(name){
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i].name === name){
+                arr[i] = null;
             }
         }
     }
