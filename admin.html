@@ -8,10 +8,22 @@
 <body>
     <div class="sidebar">
         <h2>Fleet Form</h2>
-        <input type="text" id = "vehicle" placeholder="Enter vehicle name">
-        <select name="" id="">
-            <option value="">Select Category</option>
+        <input type="text" id = "vehicle" placeholder="Enter vehicle name" required>
+        <select name="" id="select" required>
+            <option value="">Select</option>
+            <option value="">Auto</option>
+            <option value="">Car</option>
+            <option value="">Tuck</option>
+            <option value="">Bus</option>
         </select>
+        <input type="text" id="driverName" placeholder="Enter Driver Name" required>
+        <select name="" id="available" required>
+            <option value="">isAvailable?</option>
+            <option value="">Available</option>
+            <option value="">Unavailable</option>
+        </select>
+        <button id="fleet" onclick="addFleet()">Add Fleet</button>
     </div>
+    <script src="admin.js"></script>
 </body>
 </html>
