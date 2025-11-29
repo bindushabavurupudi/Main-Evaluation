@@ -7,13 +7,34 @@ function addFleet() {
     if (vehicle === "" || driver === "" || available === "isAvailable?" || select === "select")
         alert("Enter all details");
     else {
+        alert("added successfully")
         let obj = {
             vehicle: vehicle,
             cat: select,
             name: driver,
             avail: available
         };
-        arr.append(obj)
+        arr.push(obj)
+        add();
     }
-
+}
+function add(){
+    let box = document.getElementById("main");
+    box.innerHTML="";
+    for(let i = 0; i < arr.length; i++){
+        let card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `<img src = "https://coding-platform.s3.amazonaws.com/dev/lms/tickets/5e80fcb6-3f8e-480c-945b-30a5359eb40e/JNmYjkVr3WOjsrbu.png"/>
+        <p>Reg No.of Vehicle: ${arr[i].vehicle}</p>
+        <p>Category: ${arr[i].cat}</p>
+        <p>Driver Name: ${arr[i].name}
+        </br>
+        <button onclick="updateDriver(${i})">Update Driver</button>
+        </br>
+        <button onclick="updateAvail(${i})">update Availability</button>
+        </br>
+        <button onclick="updateVehicle(${i})">Update Vehicle</button>
+        `;
+        box.appendChild(card);
+    }
 }
